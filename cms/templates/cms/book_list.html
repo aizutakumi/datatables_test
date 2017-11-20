@@ -1,0 +1,96 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.css"/> 
+    <script src="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.js"></script>
+    <script>
+        jQuery(function($){
+            // デフォルトの設定を変更
+            $.extend( $.fn.dataTable.defaults, {
+                language: {
+                    url: "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json"
+                }
+            });
+
+            $("#foo-table").DataTable({
+                ajax: { url: "{% static 'data.json' %}", dataSrc: '' },
+                columns: [
+                    { data: "id" },
+                    { data: "name" },
+                    { data: "publisher" },
+                    { data: "page" }
+                ],
+
+                // 件数切替機能 無効
+                //lengthChange: false,
+                // 検索機能 無効
+                //searching: false,
+                // ソート機能 無効
+                //ordering: false,
+                // 情報表示 無効
+                //info: false,
+                // ページング機能 無効
+                //paging: false,
+
+                // 2列目を昇順にする ( [ [ 列番号, 昇順降順 ], ... ] の形式)
+                //order: [ [ 1, "asc" ] ]
+
+
+                // 状態を保存する機能をつける
+                stateSave: true,
+                // 横スクロールバーを有効にする (scrollXはtrueかfalseで有効無効を切り替えます)
+                //scrollX: true,
+                // 縦スクロールバーを有効にする (scrollYは200, "200px"など「最大の高さ」を指定します)
+                //scrollY: 200,
+                // 列設定
+                columnDefs: [
+                    // 1列目を消す(visibleをfalseにすると消えます)
+                    //{ targets: 0, visible: false },
+                    // 2列目(0から始まるため1になっています)の幅を設定
+                    { targets: 1, width: 100 }
+                ],
+
+                // 件数切替の値を設定
+                lengthMenu: [ 3, 5, 7, 10 ],
+                // 件数のデフォルトの値
+                displayLength: 5,
+            });
+        });
+    </script>
+    <style>
+        table {
+          margin-top: 8px;
+        }
+    </style>
+    <title>書籍の一覧</title>
+</head>
+<body>
+    <table id="foo-table" class="table table-bordered">
+        <thead>
+            <tr>
+              <th>ID</th>
+              <th>書籍名</th>
+              <th>出版社</th>
+              <th>ページ数</th>
+{#              <th>操作</th>#}
+            </tr>
+        </thead>
+{#        <tbody>#}
+{#            {% for book in books %}#}
+{#                <tr>#}
+{#                    <td>{{ book.id }}</td>#}
+{#                    <td>{{ book.name }}</td>#}
+{#                    <td>{{ book.publisher }}</td>#}
+{#                    <td>{{ book.page }}</td>#}
+{#                    <td>#}
+{#                        <a href="{% url 'cms:book_mod' book_id=book.id %}" class="btn btn-default btn-sm">修正</a>#}
+{#                        <a href="{% url 'cms:book_del' book_id=book.id %}" class="btn btn-default btn-sm">削除</a>#}
+{#                    </td>#}
+{#                </tr>#}
+{#            {% endfor %}#}
+{#        </tbody>#}
+    </table>
+</body>
+</html>

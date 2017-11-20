@@ -1,0 +1,13 @@
+[
+    { "id": 1, "name": "ブック１", "publisher": "集英社", "page": 150 },
+    { "id": 2, "name": "ブック２", "publisher": "小学館", "page": 120 },
+    { "id": 3, "name": "ブック３", "publisher": "講談社", "page": 200 },
+    { "id": 4, "name": "ブック４", "publisher": "角川文庫", "page": 220 },
+    { "id": 5, "name": "ブック５", "publisher": "電撃文庫", "page": 260 },
+    { "id": 6, "name": "ブック６", "publisher": "集英社", "page": 190 },
+    { "id": 7, "name": "ブック７", "publisher": "小学館", "page": 200 },
+    { "id": 8, "name": "ブック８", "publisher": "講談社", "page": 300 },
+    { "id": 9, "name": "ブック９", "publisher": "角川文庫", "page": 290 },
+    { "id": 10, "name": "ブック１０", "publisher": "電撃文庫", "page": 365 },
+    { "id": 11, "name": "薄い本", "publisher": "不明", "page": 16 }
+]

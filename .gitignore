@@ -1,0 +1,12 @@
+.DS_Store
+.metadata
+.project
+.pydevproject
+.settings/
+*.pyc
+media/
+.idea
+*~
+\#*\#
+staticfiles
+*.sqlite3

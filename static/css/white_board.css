@@ -1,0 +1,151 @@
+table {
+  margin-top: 8px;
+}
+
+textarea {
+    width: 380px;
+    overflow: auto;
+    line-height: 20px;
+}
+
+img {
+    height: 50px;
+    width: auto;
+}
+
+#RealtimeClockArea {
+    font-size: 30px;
+    color: deepskyblue;
+    text-align: center;
+}
+
+p#staff_name {
+    font-style: oblique;
+    color: blue;
+    font-size:large;
+}
+
+#logout {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #f7f7f7;
+    border-left: solid 6px #ff7c5c;/*左線*/
+    color: #ff7c5c;/*文字色*/
+    font-weight: bold;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+#logout:active {
+    box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+    transform: translateY(2px);
+}
+
+#attendance {
+    margin-left: 15px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #f7f7f7;
+    border-left: solid 6px #8FBC8F;/*左線*/
+    color: #8FBC8F;/*文字色*/
+    font-weight: bold;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+#attendance:active {
+    box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+    transform: translateY(2px);
+}
+
+#title_img {
+    height: 70px;
+    width: auto;
+}
+
+.edit_btn {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.29);
+}
+.edit_btn:active {/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+}
+.error {
+    color: red;
+}
+
+@media screen and ( max-width:480px )
+{
+    .images_body, #image_head, .img_changes_body, #img_change_head {
+        display: none;
+    }
+    .situations {
+        width: 75px;
+        position: relative;
+        left: 30px;
+    }
+    .places {
+        width: 75px;
+        position: relative;
+        left: 20px;
+    }
+
+    table {
+        border: none;
+    }
+    table thead {
+        display: none;
+    }
+    table tr {
+        border-top: 1px solid #999;
+        display: block;
+        margin-bottom: 20px;
+    }
+    table td {
+        border-bottom: 1px solid #999;
+        padding: 10px;
+        text-align: right;
+    }
+    .name_body, .place_body, .note_body, .up_time_body {
+        border-right: 1px solid #999;
+        display: block;
+    }
+    table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
+    .number_body, .situation_body, .notebtn_body {
+        display: inline-block;
+        float: left;
+        padding-left: 20px;
+        border-left: 1px solid #999;
+    }
+    .note_body, .situation_body {
+        border-left: 1px solid #999;
+    }
+    .up_time_body {
+        height: 48px;
+    }
+    .name_body, .up_time_body {
+        position: relative;
+        left: 25px;
+        width: 305px;
+    }
+    .place_body {
+        position: relative;
+        left: 35px;
+        width: 295px;
+    }
+    .notebtn_body, .situation_body {
+        position: relative;
+        z-index: 1;
+    }
+    .number_body {
+        width: 150px;
+    }
+    textarea {
+        width: 300px;
+    }
+}
